@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b2582a3510b864da77725c10176ca1, type: 3}
+  m_Name: ItemD
+  m_EditorClassIdentifier: 
+  itemID: 
+  itemType: 0
+  itemName: ItemD
+  maxUseCount: 99
+  icon: {fileID: 0}
+  description: 
+  canUse: 0
+  animationID: 1
+  canDetect: 
+  itemPrefab: {fileID: 4753892310686532988, guid: ec1dab8d409aee34ebeae2b05667424e, type: 3}
+  dropPrefab: {fileID: 3730662159857824329, guid: 8f9954d29d4afe3478bd9fc04d34190f, type: 3}
+  isInstallable: 1
+  installPrefab: {fileID: 3760136241755208016, guid: 87304902ea2cc454c8758a7651314254, type: 3}
+  previewPrefab: {fileID: 3760136241755208016, guid: c1ef38d0691c2f64a8e292305a9667e3, type: 3}
+  placementLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  placementOffset: 0.2
+  placementCheckRadius: 1

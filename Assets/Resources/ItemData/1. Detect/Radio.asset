@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b2582a3510b864da77725c10176ca1, type: 3}
+  m_Name: Radio
+  m_EditorClassIdentifier: 
+  itemID: 105
+  itemType: 0
+  itemName: Radio
+  maxUseCount: 99
+  icon: {fileID: 0}
+  description: 
+  canUse: 0
+  animationID: 1
+  canDetect: 0100000000000000
+  itemPrefab: {fileID: 1093401621461834237, guid: 191c270ebb7f1eb4aa574683a9f82fee, type: 3}
+  dropPrefab:
+    RawGuidValue: 26bd0ba61785e0445a0b8fd883a5a1a6
+  isInstallable: 1
+  installPrefab:
+    RawGuidValue: 6e4d5f3f0b1c27d4c99f1942fa0b1141
+  previewPrefab: {fileID: 6311754323933655382, guid: 3076898ae23ec1b42828e1069bffa8ff, type: 3}
+  placementLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  placementOffset: 0.1
+  placementCheckRadius: 1

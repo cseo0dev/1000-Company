@@ -1,0 +1,15 @@
+작성자: 유호정
+
+
+1. ItemData의 itemID 규칙
+100번대: 탐지형 아이템
+200번대: 제령 아이템
+300번대: 기타 소모성 아이템
+400번대: UI 관련 아이템
+
+
+2. 의존성
+Drop prefab, Install prefab에 Network Object 컴포넌트를 부착해주세요.
+
+3. ItemData를 넣을 위치
+Assets/Resources/ItemData 폴더안에 SO를 넣어주시면 ItemDatabase에 자동으로 등록됩니다.

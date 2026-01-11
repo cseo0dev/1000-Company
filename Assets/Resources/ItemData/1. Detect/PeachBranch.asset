@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b2582a3510b864da77725c10176ca1, type: 3}
+  m_Name: PeachBranch
+  m_EditorClassIdentifier: 
+  itemID: 104
+  itemType: 0
+  itemName: PeachBranch
+  maxUseCount: 1
+  icon: {fileID: 0}
+  description: 
+  canUse: 0
+  animationID: 1
+  canDetect: 00000000
+  itemPrefab: {fileID: 3667668806527262182, guid: 0b0d5a78e58ed08498b424463c7a07dd, type: 3}
+  dropPrefab:
+    RawGuidValue: d419f71cbd5db594e8628a6cd8f6aa82
+  isInstallable: 1
+  installPrefab:
+    RawGuidValue: f484e93ec3d0b69458455fb047c36c0e
+  previewPrefab: {fileID: 3667668806527262182, guid: 866112e20c1cfcb4587535c6c1a3bdc9, type: 3}
+  placementLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  placementOffset: 0.1
+  placementCheckRadius: 1

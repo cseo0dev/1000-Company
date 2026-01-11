@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b2582a3510b864da77725c10176ca1, type: 3}
+  m_Name: PPBujeok
+  m_EditorClassIdentifier: 
+  itemID: 203
+  itemType: 2
+  itemName: "\uC774\uC0C1\uD604\uC0C1\uC6A9 \uBD80\uC801"
+  maxUseCount: 1
+  icon: {fileID: 21300000, guid: e9a02f553b97f0c40a281d473d66da78, type: 3}
+  description: "\uC774\uC0C1\uD604\uC0C1\uC744 \uD1F4\uCE58\uD560 \uC218 \uC788\uB294
+    \uBD80\uC801"
+  canUse: 1
+  animationID: 1
+  canDetect: 
+  itemPrefab: {fileID: 8144475639220051600, guid: 02a2ed536bac49c4fb9a0d3ffd453cb1, type: 3}
+  dropPrefab:
+    RawGuidValue: 77b8f2243be6b2c489da47d1a8941b83
+  isInstallable: 1
+  installPrefab:
+    RawGuidValue: 291c60d628c749449a2ebf731cb2b2ed
+  previewPrefab: {fileID: 8144475639220051600, guid: e7d1f02be6bb8964e9bd6dd479d81e3c, type: 3}
+  placementLayerMask:
+    serializedVersion: 2
+    m_Bits: 16392
+  placementOffset: 1
+  placementCheckRadius: 1

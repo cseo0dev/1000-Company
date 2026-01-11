@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b2582a3510b864da77725c10176ca1, type: 3}
+  m_Name: Lamp
+  m_EditorClassIdentifier: 
+  itemID: 107
+  itemType: 0
+  itemName: Lamp
+  maxUseCount: 999
+  icon: {fileID: 0}
+  description: 
+  canUse: 0
+  animationID: 2
+  canDetect: 
+  itemPrefab: {fileID: 1081509858984167486, guid: 7485e07801d128c43a1860bf621aef6e, type: 3}
+  dropPrefab:
+    RawGuidValue: 1aa51d5ed957f3c4ead832235fed8d11
+  isInstallable: 0
+  installPrefab:
+    RawGuidValue: 00000000000000000000000000000000
+  previewPrefab: {fileID: 0}
+  placementLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  placementOffset: 0.1
+  placementCheckRadius: 1

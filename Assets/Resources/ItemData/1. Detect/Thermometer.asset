@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b2582a3510b864da77725c10176ca1, type: 3}
+  m_Name: Thermometer
+  m_EditorClassIdentifier: 
+  itemID: 106
+  itemType: 0
+  itemName: Thermometer
+  maxUseCount: 99
+  icon: {fileID: 0}
+  description: 
+  canUse: 0
+  animationID: 1
+  canDetect: 00000000
+  itemPrefab: {fileID: 6755599943670824361, guid: 558b6dcf6983011478375da75e043e67, type: 3}
+  dropPrefab:
+    RawGuidValue: 60d363789074cdf43a5b85bb0e803ecd
+  isInstallable: 0
+  installPrefab:
+    RawGuidValue: 00000000000000000000000000000000
+  previewPrefab: {fileID: 0}
+  placementLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  placementOffset: 0.1
+  placementCheckRadius: 1

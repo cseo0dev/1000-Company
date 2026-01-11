@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8bc9e6bafb82442a1c5bc9fca25e60, type: 3}
+  m_Name: Bujeok_ShopItemData
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 75426ae2b51cd55428c9850a81a4fbde, type: 2}
+  requiredMileage: 100
+  freeAvailable: 0
+  isSoldOut: 0
+  itemPrice: 30000
