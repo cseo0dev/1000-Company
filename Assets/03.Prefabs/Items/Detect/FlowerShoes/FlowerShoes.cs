@@ -1,9 +1,9 @@
-// ÄÚµå ´ã´çÀÚ : ÃÖ¼­¿µ
+// ì½”ë“œ ë‹´ë‹¹ì : ìµœì„œì˜
 using Fusion;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))] // ²É½ÅÀº µ¹¾Æ´Ù³à¾ß ÇØ¼­ NavMesh ÇÊ¿ä
+[RequireComponent(typeof(NavMeshAgent))] // ê½ƒì‹ ì€ ëŒì•„ë‹¤ë…€ì•¼ í•´ì„œ NavMesh í•„ìš”
 public class FlowerShoes : NetworkBehaviour
 {
     private ItemData itemData;
@@ -11,19 +11,19 @@ public class FlowerShoes : NetworkBehaviour
     private NavMeshAgent agent;
     private Animator animator;
 
-    // Move °ü·Ã º¯¼ö
-    private float moveRadius = 5f; // ¸ñÀûÁö ¹İ°æ
-    private float minWait = 5f; // ÃÖ¼Ò ´ë±â ½Ã°£
-    private float maxWait = 15f; // ÃÖ´ë ´ë±â ½Ã°£
+    // Move ê´€ë ¨ ë³€ìˆ˜
+    private float moveRadius = 5f; // ëª©ì ì§€ ë°˜ê²½
+    private float minWait = 5f; // ìµœì†Œ ëŒ€ê¸° ì‹œê°„
+    private float maxWait = 15f; // ìµœëŒ€ ëŒ€ê¸° ì‹œê°„
 
-    private int maxDestinationTries = 10; // À¯È¿ ¸ñÀûÁö Å½»ö Àç½Ãµµ È½¼ö
-    private float sampleMaxDistance = 1.0f; // NavMesh.SamplePosition ¹İ°æ
+    private int maxDestinationTries = 10; // ìœ íš¨ ëª©ì ì§€ íƒìƒ‰ ì¬ì‹œë„ íšŸìˆ˜
+    private float sampleMaxDistance = 1.0f; // NavMesh.SamplePosition ë°˜ê²½
 
-    private float moveTimeoutSeconds = 3f; // ¸ñÀûÁö ÇâÇØ °È´Â ÃÖ´ë ½Ã°£
-    private float moveElapsed = 0f;   // ÇöÀç ¸ñÀûÁö¸¦ ÇâÇØ ÀÌµ¿ÇÑ ´©Àû ½Ã°£
+    private float moveTimeoutSeconds = 3f; // ëª©ì ì§€ í–¥í•´ ê±·ëŠ” ìµœëŒ€ ì‹œê°„
+    private float moveElapsed = 0f;   // í˜„ì¬ ëª©ì ì§€ë¥¼ í–¥í•´ ì´ë™í•œ ëˆ„ì  ì‹œê°„
 
-    private Vector3 dest; // ¸ñÀûÁö ÁÂÇ¥
-    float waitRemain = 0f; // ´ë±â ½Ã°£
+    private Vector3 dest; // ëª©ì ì§€ ì¢Œí‘œ
+    float waitRemain = 0f; // ëŒ€ê¸° ì‹œê°„
 
     enum Phase { Idle, Waiting, Moving }
     Phase phase = Phase.Idle;
@@ -48,7 +48,7 @@ public class FlowerShoes : NetworkBehaviour
 
     public override void Spawned()
     {
-        // Awake Àü¿¡ È£ÃâµÇ´Â »óÈ² ´ëºñ¿ë
+        // Awake ì „ì— í˜¸ì¶œë˜ëŠ” ìƒí™© ëŒ€ë¹„ìš©
         if (!agent)
             agent = GetComponent<NavMeshAgent>();
         if (!animator)
@@ -56,22 +56,22 @@ public class FlowerShoes : NetworkBehaviour
         if (!itemData)
             itemData = GetComponent<ItemObject>()?.itemData;
 
-        // È£½ºÆ®¸¸
+        // í˜¸ìŠ¤íŠ¸ë§Œ
         if (!Object || !Object.HasStateAuthority || !agent)
             return;
 
-        agent.enabled = false; // ¿¡ÀÌÀüÆ®°¡ ÀÓÀÇ·Î ¿òÁ÷ÀÌ±â Àü¿¡ Àá±ñ ²¨µÎ±â
+        agent.enabled = false; // ì—ì´ì „íŠ¸ê°€ ì„ì˜ë¡œ ì›€ì§ì´ê¸° ì „ì— ì ê¹ êº¼ë‘ê¸°
 
-        Vector3 desired = transform.position; // Ãş°£ ½ºÆù¿ë
+        Vector3 desired = transform.position; // ì¸µê°„ ìŠ¤í°ìš©
 
         if (NavMesh.SamplePosition(desired, out var hit, 0.5f, NavMesh.AllAreas))
         {
             desired = hit.position;
         }
 
-        transform.position = desired; // Æ®·£½ºÆû ¸ÕÀú ¸ÂÃß±â
+        transform.position = desired; // íŠ¸ëœìŠ¤í¼ ë¨¼ì € ë§ì¶”ê¸°
 
-        // ¿¡ÀÌÀüÆ® È°¼ºÈ­ + NavMesh »óÀÇ À§Ä¡ °­Á¦·Î È®Á¤
+        // ì—ì´ì „íŠ¸ í™œì„±í™” + NavMesh ìƒì˜ ìœ„ì¹˜ ê°•ì œë¡œ í™•ì •
         agent.enabled = true;
         agent.Warp(desired);
     }
@@ -81,7 +81,7 @@ public class FlowerShoes : NetworkBehaviour
         if (!Object)
             return;
 
-        // NavMeshAgent ºñÈ°¼º
+        // NavMeshAgent ë¹„í™œì„±
         if (!Object.HasStateAuthority)
         {
             if (agent)
@@ -94,7 +94,7 @@ public class FlowerShoes : NetworkBehaviour
                     agent.velocity = Vector3.zero;
                     agent.updatePosition = false;
                     agent.updateRotation = false;
-                    agent.enabled = false; // ¿ÏÀüÈ÷ ²¨¹ö¸®±â
+                    agent.enabled = false; // ì™„ì „íˆ êº¼ë²„ë¦¬ê¸°
                 }
             }
             return;
@@ -145,7 +145,7 @@ public class FlowerShoes : NetworkBehaviour
         switch (phase)
         {
             case Phase.Idle:
-                // Ã¹ ÁøÀÔ ½Ã ´ë±âºÎÅÍ ½ÃÀÛ
+                // ì²« ì§„ì… ì‹œ ëŒ€ê¸°ë¶€í„° ì‹œì‘
                 waitRemain = RandomWait();
                 moveElapsed = 0f;
                 AgentStop();
@@ -158,15 +158,15 @@ public class FlowerShoes : NetworkBehaviour
                     waitRemain -= dt;
                     break;
                 }
-                // ¸ñÀûÁö ¼±Á¤
+                // ëª©ì ì§€ ì„ ì •
                 if (!TargetDestination(transform.position, out dest))
                 {
-                    // »ùÇÃ ½ÇÆĞ ½Ã Âª°Ô Àç½Ãµµ ´ë±â
+                    // ìƒ˜í”Œ ì‹¤íŒ¨ ì‹œ ì§§ê²Œ ì¬ì‹œë„ ëŒ€ê¸°
                     waitRemain = RandomWait();
                     break;
                 }
 
-                // ÀÌµ¿ ½ÃÀÛ
+                // ì´ë™ ì‹œì‘
                 agent.updatePosition = true;
                 agent.updateRotation = true;
                 agent.isStopped = false;
@@ -177,17 +177,17 @@ public class FlowerShoes : NetworkBehaviour
                 break;
 
             case Phase.Moving:
-                // ¾ÆÁ÷ °æ·Î °è»ê ÁßÀÌ¸é ´ë±â
+                // ì•„ì§ ê²½ë¡œ ê³„ì‚° ì¤‘ì´ë©´ ëŒ€ê¸°
                 if (agent.pathPending)
                     break;
 
-                // °æ·Î°¡ À¯È¿ÇÏÁö ¾ÊÀ¸¸é ´Ù½Ã ÈÄº¸¸¦ Ã£µµ·Ï ´ë±â »óÅÂ·Î º¹±Í
+                // ê²½ë¡œê°€ ìœ íš¨í•˜ì§€ ì•Šìœ¼ë©´ ë‹¤ì‹œ í›„ë³´ë¥¼ ì°¾ë„ë¡ ëŒ€ê¸° ìƒíƒœë¡œ ë³µê·€
                 if (!agent.hasPath ||
                     agent.pathStatus == NavMeshPathStatus.PathInvalid ||
                     agent.pathStatus == NavMeshPathStatus.PathPartial)
                 {
                     AgentStop();
-                    waitRemain = RandomWait(); // ¹Ù·Î ´Ù½Ã ±¼¸®±âº¸´Ü »ìÂ¦ ½¬°í ÀçÅ½»ö
+                    waitRemain = RandomWait(); // ë°”ë¡œ ë‹¤ì‹œ êµ´ë¦¬ê¸°ë³´ë‹¨ ì‚´ì§ ì‰¬ê³  ì¬íƒìƒ‰
                     moveElapsed = 0f;
                     phase = Phase.Waiting;
                     break;
@@ -195,7 +195,7 @@ public class FlowerShoes : NetworkBehaviour
 
                 moveElapsed += dt;
 
-                // ¸ñÀûÁö±îÁö ÀÏÁ¤ ½Ã°£ ÀÌ»ó °É¸®¸é ÀÌ ¸ñÀûÁö´Â Æ÷±âÇÏ°í »õ ¸ñÀûÁö Å½»ö
+                // ëª©ì ì§€ê¹Œì§€ ì¼ì • ì‹œê°„ ì´ìƒ ê±¸ë¦¬ë©´ ì´ ëª©ì ì§€ëŠ” í¬ê¸°í•˜ê³  ìƒˆ ëª©ì ì§€ íƒìƒ‰
                 if (moveElapsed >= moveTimeoutSeconds)
                 {
                     AgentStop();
@@ -205,7 +205,7 @@ public class FlowerShoes : NetworkBehaviour
                     break;
                 }
 
-                // Á¤»ó °æ·ÎÀÏ ¶§ µµÂø ÆÇÁ¤
+                // ì •ìƒ ê²½ë¡œì¼ ë•Œ ë„ì°© íŒì •
                 if (Arrived(dest))
                 {
                     AgentStop();
@@ -225,7 +225,7 @@ public class FlowerShoes : NetworkBehaviour
     }
 
     /// <summary>
-    /// ÀÌµ¿ / ¾Ö´Ï¸ŞÀÌ¼Ç
+    /// ì´ë™ / ì• ë‹ˆë©”ì´ì…˜
     /// </summary>
     private void AgentStop()
     {
@@ -234,7 +234,7 @@ public class FlowerShoes : NetworkBehaviour
         agent.isStopped = true;
         if (agent.hasPath)
             agent.ResetPath();
-        agent.velocity = Vector3.zero; // ÀÜ¿© ¼Óµµ Á¦°Å
+        agent.velocity = Vector3.zero; // ì”ì—¬ ì†ë„ ì œê±°
 
         agent.updatePosition = false;
         agent.updateRotation = false;
@@ -246,21 +246,21 @@ public class FlowerShoes : NetworkBehaviour
     }
 
     /// <summary>
-    /// ÇöÀç À§Ä¡¸¦ ±âÁØÀ¸·Î moveRadius³»¿¡¼­ ·£´ı ¸ñÀûÁö Ã£´Â ÇÔ¼ö
+    /// í˜„ì¬ ìœ„ì¹˜ë¥¼ ê¸°ì¤€ìœ¼ë¡œ moveRadiusë‚´ì—ì„œ ëœë¤ ëª©ì ì§€ ì°¾ëŠ” í•¨ìˆ˜
     /// </summary>
     private bool TargetDestination(Vector3 origin, out Vector3 result)
     {
-        // NavMesh »óÀÇ ·£´ı Á¡ + PathComplete Á¶°ÇÀ» ¸¸Á·ÇÏ´Â ¸ñÀûÁö¸¸ ÀÎÁ¤
+        // NavMesh ìƒì˜ ëœë¤ ì  + PathComplete ì¡°ê±´ì„ ë§Œì¡±í•˜ëŠ” ëª©ì ì§€ë§Œ ì¸ì •
         for (int i = 0; i < Mathf.Max(1, maxDestinationTries); i++)
         {
             Vector2 v = Random.insideUnitCircle * moveRadius;
             Vector3 cand = origin + new Vector3(v.x, 0f, v.y);
 
-            // NavMesh À§ÀÇ Æ÷ÀÎÆ® »ùÇÃ
+            // NavMesh ìœ„ì˜ í¬ì¸íŠ¸ ìƒ˜í”Œ
             if (!NavMesh.SamplePosition(cand, out var hit, sampleMaxDistance, NavMesh.AllAreas))
                 continue;
 
-            // ÇöÀç À§Ä¡¿¡¼­ ÇØ´ç Æ÷ÀÎÆ®±îÁöÀÇ °æ·Î°¡ ¿ÏÀüÇÑÁö È®ÀÎ
+            // í˜„ì¬ ìœ„ì¹˜ì—ì„œ í•´ë‹¹ í¬ì¸íŠ¸ê¹Œì§€ì˜ ê²½ë¡œê°€ ì™„ì „í•œì§€ í™•ì¸
             if (!HasCompletePath(hit.position))
                 continue;
 
@@ -269,11 +269,11 @@ public class FlowerShoes : NetworkBehaviour
         }
 
         result = origin;
-        return false; // À¯È¿ ÁöÁ¡ ½ÇÆĞ
+        return false; // ìœ íš¨ ì§€ì  ì‹¤íŒ¨
     }
 
     /// <summary>
-    /// ÇöÀç ¿¡ÀÌÀüÆ® À§Ä¡¿¡¼­ destination±îÁö PathCompleteÀÎÁö È®ÀÎ
+    /// í˜„ì¬ ì—ì´ì „íŠ¸ ìœ„ì¹˜ì—ì„œ destinationê¹Œì§€ PathCompleteì¸ì§€ í™•ì¸
     /// </summary>
     private bool HasCompletePath(Vector3 destination)
     {
